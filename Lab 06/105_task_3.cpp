@@ -70,7 +70,9 @@ public:
     }
     int operator==(int data)
     {
-        return (weight == data) ? 1 : 0;
+        int temp1 = int(weight);
+        float temp2=weight-float(temp1);
+        return (temp2!=0.0) ? 0: (temp1 == data) ? 1 : 0;
     }
     void operator--(int dec)
     {
@@ -83,19 +85,19 @@ int main(void)
     animal1.getInformation();
     animal1.operator--(5);
     animal1.getHeight();
-    if (animal1 == 70)
-        cout << "YES" << endl;
-    else
-        cout << "NO" << endl;
     cout << animal1.getAge() << endl;
     animal2.setBirthYear(2025);
     animal2.setCageNo(560);
     animal2.setHeight(12);
     animal2.setName("Panda");
-    animal2.setWeight(1200);
+    animal2.setWeight(70.00);
     animal2.getBirthYear();
     animal2.getCageNo();
     animal2.getHeight();
     animal2.getName();
     animal2.getWeight();
+    if (animal2 == 70)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
 }
