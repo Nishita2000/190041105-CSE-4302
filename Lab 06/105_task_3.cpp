@@ -70,7 +70,9 @@ public:
     }
     int operator==(int data)
     {
-        return (weight==data) ? 1:0;
+        int temp1 = int(weight);
+        float temp2=weight-float(temp1);
+        return (temp2!=0.0) ? 0: (temp1 == data) ? 1 : 0;
     }
     void operator--(int dec)
     {
@@ -88,7 +90,7 @@ int main(void)
     animal2.setCageNo(560);
     animal2.setHeight(12);
     animal2.setName("Panda");
-    animal2.setWeight(70.00);
+    animal2.setWeight(70.05);
     animal2.getBirthYear();
     animal2.getCageNo();
     animal2.getHeight();
