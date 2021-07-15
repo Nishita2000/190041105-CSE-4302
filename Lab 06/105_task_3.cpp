@@ -70,9 +70,7 @@ public:
     }
     int operator==(int data)
     {
-        int temp1 = int(weight);
-        float temp2=weight-float(temp1);
-        return (temp2!=0.0) ? 0: (temp1 == data) ? 1 : 0;
+        return (weight==data) ? 1:0;
     }
     void operator--(int dec)
     {
