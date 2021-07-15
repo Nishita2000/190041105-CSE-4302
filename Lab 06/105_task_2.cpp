@@ -32,7 +32,13 @@ public:
     }
     FLOAT operator/(FLOAT f)
     {
-        return FLOAT(data / f.data);
+        if (f.data != 0)
+            return FLOAT(data / f.data);
+        else
+        {
+            cout << "Invalid" << endl;
+            return FLOAT(data);
+        }
     }
     operator int() const
     {
@@ -55,6 +61,6 @@ int main(void)
     f4.Display();
     f4 = f2 / f3;
     f4.Display();
-    int i = f1;
+    int i = f2;
     cout << "Int: " << i << endl;
 }
