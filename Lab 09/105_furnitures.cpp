@@ -31,6 +31,10 @@ public:
         if (val <= price)
             discount = val;
     }
+    void setDiscountPercentage(double val)
+    {
+       setDiscount((price*val)/100);
+    }
     void setMadeof(Material val)
     {
         madeof = val;
@@ -212,7 +216,7 @@ int main(void)
     furnituresList[2] = new Almirah(13000, 345, "Wooden Almirah", Material::Wood, Door::Three);
     furnituresList[3] = new Bed(10090, 123, "Bahari Bed", Material::Board, BedSize::SemiDouble);
 
-    furnituresList[2]->setDiscount(30);
+    furnituresList[2]->setDiscountPercentage(30);
 
     for (int i = 0; i < 4; i++)
     {
