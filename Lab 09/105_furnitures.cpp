@@ -222,9 +222,12 @@ int main(void)
     sort_furniture_discount(furnituresList, 4);
 
     cout << "Sorted" << endl;
-    
+
     for (int i = 0; i < 4; i++)
     {
         furnituresList[i]->productDetails();
     }
+
+    for (int i = 0; i < 4; i++)
+        delete furnituresList[i];
 }
