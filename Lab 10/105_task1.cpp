@@ -39,7 +39,7 @@ public:
     void setData(void)
     {
         Employee::setData();
-        cout << "Enter cmpany name: ";
+        cout << "Enter company name: ";
         cin >> company;
     }
     // It's compulsory to define pure virtual function in child class
