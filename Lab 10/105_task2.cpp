@@ -75,17 +75,8 @@ private:
     // It is essential that each member of this class be created with unique string for member data "name"
     // which is provided as an argument to the constructor
     // So to avoid copying it is necessary to keep the overloaded assignment operator and copy constructor private
-    Department &operator=(Department &obj)
-    {
-        name = obj.name;
-        cout << "Assignment operator invoked" << endl;
-        return *this;
-    }
-    Department(Department &obj)
-    {
-        name = obj.name;
-        cout << "Copy constructor invoked" << endl;
-    }
+    void operator=(Department &obj) {}
+    Department(Department &obj) {}
 
 public:
     Department() {}
