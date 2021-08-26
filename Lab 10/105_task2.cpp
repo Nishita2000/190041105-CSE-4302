@@ -1,5 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+class Int
+{
+private:
+    int cnt = 0;
+    int *data;
+
+public:
+    Int()
+    {
+        data = new int[50];
+    }
+    /*Int(Int &obj)
+    {
+        cnt = obj.cnt;
+        for (int i = 0; i < cnt; i++)
+            data[i] = obj.data[i];
+    }
+    void operator=(Int &obj)
+    {
+        cnt = obj.cnt;
+        for (int i = 0; i < cnt; i++)
+            data[i] = obj.data[i];
+    }*/
+    void setData(int d)
+    {
+        data[cnt++] = d;
+    }
+    void change(int position, int value)
+    {
+        data[position] = value;
+    }
+    void show(void)
+    {
+        for (int i = 0; i < cnt; i++)
+            cout << data[i] << " ";
+        cout << endl;
+    }
+};
+
 class Student
 {
 private:
@@ -27,6 +67,7 @@ public:
         return *this;
     }
 };
+
 class Department
 {
 private:
@@ -50,8 +91,24 @@ public:
     Department() {}
     Department(string s) : name(s) {}
 };
+
 int main(void)
 {
+    Int arr1, arr2;
+    arr1.setData(70);
+    arr1.setData(100);
+    arr1.setData(200);
+    arr2 = arr1;
+    cout << "arr1: ";
+    arr1.show();
+    cout << "arr2: ";
+    arr2.show();
+    arr1.change(0, 50);
+    cout << "arr1: ";
+    arr1.show();
+    cout << "arr2: ";
+    arr2.show();
+
     Student s1("Tanjila");
     Student s2("Faria");
     Student s3(s2);
